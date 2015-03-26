@@ -1,0 +1,81 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-style/core-style.html">
+<link rel="import" href="tef_dropdown_styles.html">
+
+<polymer-element name="tef-dropdown" attributes ="size inline block list anchor">
+    <template>
+        <core-style ref="tef-dropdown"></core-style>
+        <div class="{{resolveClass()}}">
+            <content select="i"></content>
+            <template if="{{!list && !anchor}}">
+                <select>
+                    <template repeat="{{options}}">
+                        <option>{{textContent}}</option>
+                    </template>
+                </select>
+            </template>
+            <template if="{{list}}">
+                <span>{{options[0].textContent}}</span>
+                <ul>
+                    <template repeat="{{options}}">
+                        <li>{{textContent}}</li>
+                    </template>
+                </ul>
+            </template>
+            <template if="{{anchor}}">
+                <span>{{options[0].textContent}}</span>
+                <ul>
+                    <template repeat="{{options}}">
+                        <li><a href={{firstChild.href}}>{{textContent}}</a></li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            publish: {
+                anchor: {
+                    value: false,
+                    reflect: true
+                },
+                block: {
+                    value: false,
+                    reflect: true
+                },
+                inline: {
+                    value: false,
+                    reflect: true
+                },
+                list: {
+                    value: false,
+                    reflect: true
+                }
+            },
+          
+            created: function() {
+                this.options = [];
+            },
+            
+            ready: function(){
+                var opts = this.querySelectorAll('option');
+                for(var i = 0; i < opts.length; i++){
+                    this.options.push(opts[i]);
+                }
+            },
+            
+            resolveClass: function() {
+                var localClass = 'tef-dropdown';
+                if (this.size) localClass += ' ' + this.size;
+                if (this.inline && !this.block) {
+                    localClass += ' inline';
+                }
+                if (!this.inline && this.block) {
+                    localClass += ' block';
+                }
+                return localClass;
+            }
+
+        });
+    </script>
+</polymer-element>
