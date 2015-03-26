@@ -1,0 +1,31 @@
+//
+// Reset default browser styles
+//
+body {
+  background: white;
+  height: 100%;
+}
+
+button::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+button {
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+// disabled
+[disabled],
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+// helper classes
+.tef-left { text-align: left; }
+.tef-center { text-align: center; }
+.tef-right { text-align: right; }

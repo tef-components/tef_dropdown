@@ -1,0 +1,32 @@
+{
+  "name": "dropdowns",
+  "homepage": "https://github.com/tef-components/dropdowns",
+  "authors": [
+    "the TEF components team"
+  ],
+  "description": "TEF components - dropdowns",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "bower.json",
+    ".gitignore",
+    "README.md",
+    "Gruntfile.js",
+    "package.json",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "utils": "tef-components/utils",
+    "icons": "tef-components/icons"
+  },
+  "_release": "f3ff71f216",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f3ff71f216982b23d5b9d5bab411acb21d138c94"
+  },
+  "_source": "git://github.com/tef-components/dropdowns.git",
+  "_target": "master",
+  "_originalSource": "tef-components/dropdowns"
+}

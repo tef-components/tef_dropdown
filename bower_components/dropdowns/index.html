@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TEF components demo</title>
+    <meta name="viewport" content="width=device-width">
+    <link id="themeFile" rel="stylesheet" href="../theme_telefonica/css/components.telefonica.css">
+
+    <style>
+      header[data-columns] { padding-top: 30px; }
+      h1 { margin-top: 0; }
+      header > div { padding-top: 2px; }
+      code {
+        display: block;
+        overflow: hidden;
+      }
+      style {
+        display: block;
+        white-space: pre;
+        color: #0086B3;
+        border: 1px solid #cfcece;
+        background: #f2f2f2;
+        margin: 20px 0;
+        line-height: 25px;
+        overflow-y: auto;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tef-wrapper">
+      <header data-columns="2" data-columns-xs="1">
+        <h1>Dropdowns</h1>
+        <div>
+          <label>Change theme</label>
+          <div class="tef-dropdown inline" data-icon="angle_down">
+            <select id="themeSelector">
+              <option value="telefonica">Telefónica</option>
+              <option value="movistar">Movistar</option>
+              <option value="o2">O2</option>
+              <option value="vivo">Vivo</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <h2>Select</h2>
+      <div class="tef-dropdown" data-icon="angle_down">
+        <select>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
+      <code>
+        <style>
+      <select class="tef-dropdown" data-icon="angle_down">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+        </style>
+      </code>
+
+      <h2>Dropdown</h2>
+      <div class="tef-dropdown" data-icon="angle_down">
+        <span>Option 1</span>
+        <ul>
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+        </ul>
+      </div>
+      <code>
+        <style>
+      <div class="tef-dropdown" data-icon="angle_down">
+        <span>Option 1</span>
+        <ul>
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+        </ul>
+      </div>
+        </style>
+      </code>
+
+      <h2>Dropdown with anchors</h2>
+      <div class="tef-dropdown inline" data-icon="angle_down">
+        <span>Option 1</span>
+        <ul>
+          <li><a href="">Option 1</a></li>
+          <li><a href="">Option 2</a></li>
+          <li><a href="">Option 3</a></li>
+        </ul>
+      </div>
+      <code>
+        <style>
+      <div class="tef-dropdown inline" data-icon="angle_down">
+        <span>Option 1</span>
+        <ul>
+          <li><a href="">Option 1</a></li>
+          <li><a href="">Option 2</a></li>
+          <li><a href="">Option 3</a></li>
+        </ul>
+      </div>
+        </style>
+      </code>
+
+      <h2>Sizes</h2>
+      <div class="tef-row">
+        <label>Small select / dropdown</label>
+        <div class="tef-dropdown inline small" data-icon="angle_down">
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="tef-dropdown inline small" data-icon="angle_down">
+          <span>Option 1</span>
+          <ul>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tef-row">
+        <label>Large select / dropdown</label>
+        <div class="tef-dropdown inline large" data-icon="angle_down">
+          <select>
+            <option>option 1</option>
+            <option>option 2</option>
+            <option>option 3</option>
+          </select>
+        </div>
+        <div class="tef-dropdown inline large" data-icon="angle_down">
+          <span>Option 1</span>
+          <ul>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+          </ul>
+        </div>
+      </div>
+      <code>
+        <style>
+      <div class="tef-dropdown inline small" data-icon="angle_down">
+        <select>...</select>
+      </div>
+
+      <div class="tef-dropdown inline large" data-icon="angle_down">
+        <select>...</select>
+      </div>
+
+      <div class="tef-dropdown inline small" data-icon="angle_down">
+        <span>Option 1</span>
+        <ul>...</ul>
+      </div>
+
+      <div class="tef-dropdown inline large" data-icon="angle_down">
+        <span>Option 1</span>
+        <ul>...</ul>
+      </div>
+        </style>
+      </code>
+
+      <h2>Block</h2>
+      <p>Fits the available space.</p>
+      <div class="tef-row">
+        <div class="tef-dropdown block" data-icon="angle_down">
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="tef-row">
+        <div class="tef-dropdown block" data-icon="angle_down">
+          <span>Option 1</span>
+          <ul>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+          </ul>
+        </div>
+      </div>
+      <code>
+        <style>
+      <div class="tef-dropdown block" data-icon="angle_down">
+        <select>...</select>
+      </div>
+
+      <div class="tef-dropdown block" data-icon="angle_down">
+        <span>Option 1</span>
+        <ul>...</ul>
+      </div>
+        </style>
+      </code>
+
+    </div>
+
+    <script>
+      var theme = document.getElementById('themeSelector');
+      theme.addEventListener('change', function() {
+        var link = document.getElementById('themeFile');
+        link.href = '../theme_'
+          + theme.value + '/css/components.'
+          + theme.value + '.css';
+      });
+    </script>
+  </body>
+</html>

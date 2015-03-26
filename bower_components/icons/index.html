@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>icons</title>
+    <style>
+    body {
+      margin:0;
+      padding:10px 20px;
+      background:#fff;
+      color:#222;
+    }
+    h1, div, footer {
+      font-family:"Helvetica Neue", Arial, sans-serif;
+    }
+    h1 {
+      margin:20px 0 10px;
+      font-size:30px;
+      font-weight:normal;
+    }
+    .icons__item {
+      cursor:pointer;
+    }
+    .icons__item:hover {
+      color:#3c90be;
+    }
+    .icons__item i {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 30px;
+    }
+    footer {
+      margin-top:40px;
+      font-size:14px;
+      color:#999;
+    }
+    </style>
+    <link rel="stylesheet" href="icons.css">
+  </head>
+  <body>
+      <h1>Usage</h1>
+      <pre><code>&lt;i data-icon=&quot;<span id="name">name</span>&quot;&gt;&lt;/i&gt;</code></pre>
+      
+      <p>(Click on an icon to get the class name)</p>
+
+      <h1>icons</h1>
+
+      <div class="icons" id="icons">
+          
+              <div class="icons__item"  data-name="angle_down">
+                <i data-icon="angle_down"></i>
+                angle_down
+              </div>
+          
+              <div class="icons__item"  data-name="angle_left">
+                <i data-icon="angle_left"></i>
+                angle_left
+              </div>
+          
+              <div class="icons__item"  data-name="angle_right">
+                <i data-icon="angle_right"></i>
+                angle_right
+              </div>
+          
+              <div class="icons__item"  data-name="angle_up">
+                <i data-icon="angle_up"></i>
+                angle_up
+              </div>
+          
+              <div class="icons__item"  data-name="check">
+                <i data-icon="check"></i>
+                check
+              </div>
+          
+              <div class="icons__item"  data-name="close">
+                <i data-icon="close"></i>
+                close
+              </div>
+          
+              <div class="icons__item"  data-name="close_circle">
+                <i data-icon="close_circle"></i>
+                close_circle
+              </div>
+          
+              <div class="icons__item"  data-name="help_circle">
+                <i data-icon="help_circle"></i>
+                help_circle
+              </div>
+          
+              <div class="icons__item"  data-name="menu">
+                <i data-icon="menu"></i>
+                menu
+              </div>
+          
+              <div class="icons__item"  data-name="minus">
+                <i data-icon="minus"></i>
+                minus
+              </div>
+          
+              <div class="icons__item"  data-name="plus">
+                <i data-icon="plus"></i>
+                plus
+              </div>
+          
+              <div class="icons__item"  data-name="search">
+                <i data-icon="search"></i>
+                search
+              </div>
+          
+              <div class="icons__item"  data-name="user">
+                <i data-icon="user"></i>
+                user
+              </div>
+          
+      </div>
+
+      
+
+
+      <script>
+        (function() {
+          document.getElementById('icons').onclick = function(e) {
+            e = e || window.event;
+            var name = e.target.getAttribute('data-name') || e.target.parentNode.getAttribute('data-name');
+            document.getElementById('name').innerHTML = name;
+            
+          }
+        })();
+      </script>
+  </body>
+</html>

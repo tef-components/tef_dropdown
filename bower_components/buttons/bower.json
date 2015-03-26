@@ -1,0 +1,24 @@
+{
+  "name": "buttons",
+  "version": "0.2.14",
+  "homepage": "https://github.com/tef-components/buttons",
+  "authors": [
+    "the TEF components team"
+  ],
+  "description": "TEF components - buttons",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "bower.json",
+    ".gitignore",
+    "README.md",
+    "Gruntfile.js",
+    "package.json",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "utils": "tef-components/utils",
+    "icons": "tef-components/icons"
+  }
+}

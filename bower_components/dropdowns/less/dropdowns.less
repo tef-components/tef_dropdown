@@ -1,0 +1,177 @@
+//
+// TEF components - dropdowns
+//
+
+@import "../../utils/less/mixins.less";
+
+// Vanilla variables
+@color: #007486;
+@positive: #00c607;
+@negative: #ca3430;
+@subdued: #84959e;
+@significant: #00c6d7;
+@neutral: #84959e;
+
+@grey1: #f2f2f2;
+@grey2: #cfcece;
+@grey3: #b3b5b7;
+@grey4: #aeadad;
+@grey5: #686868;
+@grey6: #31313d;
+
+.tef-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: transparent;
+  box-sizing: border-box;
+
+  &:before {
+    position: absolute;
+    font-weight: normal;
+    font-size: 24px;
+    top: 0;
+    right: 0;
+    width: 40px;
+    line-height: 34px;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  select,
+  span {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    background-image: none;
+    background-color: @grey1;
+    color: black;
+    font-size: 15px;
+    line-height: normal;
+    font-weight: normal;
+    border-radius: 4px;
+    padding: 7px 40px 7px 9px;
+    border: 1px solid @grey2;
+    cursor: pointer;
+    box-sizing: border-box;
+    .truncate();
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    select,
+    span {
+      padding: 6px 39px 6px 8px;
+      border: 2px solid @significant;
+      outline: none;
+    }
+  }
+
+  // remove dotted outline
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 black;
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    list-style: none;
+    margin: 0 4px 8px;
+    padding: 7px 0;
+    background: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: @shadow;
+    z-index: 100;
+  }
+
+  li {
+    padding: 3px 10px;
+    font-size: 15px;
+    word-break: break-word;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: @grey1;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  span:active + ul,
+  span.active + ul {
+    display: block;
+  }
+
+  //sizes
+  &.small {
+    &:before {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    select,
+    span,
+    li { font-size: 11px; }
+  }
+
+  &.large {
+    &:before {
+      font-size: 30px;
+      line-height: 44px;
+    }
+
+    select,
+    span,
+    li { font-size: 24px; }
+  }
+
+  // options
+  &.block {
+    width: 100%;
+
+    select,
+    span { width: 100%; }
+  }
+}
+
+// firefox hacks to fix component height
+@-moz-document url-prefix() {
+  .tef-dropdown {
+//    &:before { margin-top: -12px; }
+//    select { font-size: 14px; }
+//    &.small {
+//      select { font-size: 10px; }
+//    }
+//    &.large {
+//      select { font-size: 22px; }
+//    }
+    select {
+      padding: 6px 40px 6px 9px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        padding: 5px 39px 5px 8px;
+      }
+    }
+  }
+}
