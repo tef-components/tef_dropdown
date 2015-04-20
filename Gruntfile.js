@@ -9,6 +9,24 @@ module.exports = function(grunt) {
         }
       }
     },
+    
+    // Creates embedded icon font
+    webfont: {
+      embedded: {
+        src: '../icons/source/*.svg',
+        dest: 'fonts/',
+        options: {
+          font: 'icons',
+          embed: 'woff,ttf,eot',
+          engine: 'node',
+          templateOptions: {
+            baseClass: '',
+            classPrefix: '',
+            mixinPrefix: ""
+          }
+        }
+      }
+    },
 
     includes: {
       files: {
@@ -69,11 +87,13 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'less',
-    'includes',
+    'webfont:embedded',
+    'includes'
   ]);
 
   grunt.registerTask('release', [
     'less',
+    'webfont:embedded',
     'includes',
     'exec:add',
     'prompt',
