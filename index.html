@@ -46,11 +46,11 @@
 
   <body unresolved>
     <div class="tef-wrapper">
-      <header data-columns="2" data-columns-xs="1">
+      <header columns="2 xs1">
         <h1>tef-dropdown</h1>
         <div>
           <label>Change theme</label>
-          <div class="tef-dropdown" data-icon="angle_down">
+          <div class="tef-dropdown" icon="angle_down">
             <select id="themeSelector">
               <option value="telefonica">Telefónica</option>
               <option value="movistar">Movistar</option>
@@ -60,28 +60,9 @@
           </div>
         </div>
       </header>
-        
-      <h2>Dropdown with select</h2>
-      <tef-dropdown>
-        <i data-icon="angle_down"></i>
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-      </tef-dropdown>
-      <code>
-        <style>
-      <tef-dropdown>
-        <i data-icon="angle_down"></i>
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-      </tef-dropdown>
-        </style>
-      </code>
       
       <h2>Dropdown with list</h2>
       <tef-dropdown list>
-        <i data-icon="angle_down"></i>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
@@ -89,7 +70,6 @@
       <code>
         <style>
       <tef-dropdown list>
-        <i data-icon="angle_down"></i>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
@@ -99,7 +79,6 @@
       
       <h2>Dropdown with anchor</h2>
       <tef-dropdown anchor>
-        <i data-icon="angle_down"></i>
         <option><a href="">Option 1</a></option>
         <option><a href="">Option 2</a></option>
         <option><a href="">Option 3</a></option>
@@ -107,7 +86,6 @@
       <code>
         <style>
       <tef-dropdown anchor>
-        <i data-icon="angle_down"></i>
         <option><a href="">Option 1</a></option>
         <option><a href="">Option 2</a></option>
         <option><a href="">Option 3</a></option>
@@ -115,65 +93,15 @@
         </style>
       </code>
       
-      <h2>Sizes</h2>
+      <h2>Dropdown directon</h2>
+      <p>Class "up" will change direction.</p>
       <div class="tef-row">
-        <label>Small dropdown</label>
-        <tef-dropdown inline size="small">
-          <i data-icon="angle_down"></i>
+        <tef-dropdown list up>
           <option>Option 1</option>
           <option>Option 2</option>
           <option>Option 3</option>
         </tef-dropdown>
-        <tef-dropdown inline list size="small">
-          <i data-icon="angle_down"></i>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </tef-dropdown>
-        <tef-dropdown inline anchor size="small">
-          <i data-icon="angle_down"></i>
-          <option><a href="">Option 1</a></option>
-          <option><a href="">Option 2</a></option>
-          <option><a href="">Option 3</a></option>
-        </tef-dropdown>
-      </div>
-      <div class="tef-row">
-        <label>Default dropdown</label>
-        <tef-dropdown inline>
-          <i data-icon="angle_down"></i>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </tef-dropdown>
-        <tef-dropdown inline list>
-          <i data-icon="angle_down"></i>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </tef-dropdown>
-        <tef-dropdown inline anchor>
-          <i data-icon="angle_down"></i>
-          <option><a href="">Option 1</a></option>
-          <option><a href="">Option 2</a></option>
-          <option><a href="">Option 3</a></option>
-        </tef-dropdown>
-      </div>
-      <div class="tef-row">
-        <label>Large dropdown</label>
-        <tef-dropdown inline size="large">
-          <i data-icon="angle_down"></i>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </tef-dropdown>
-        <tef-dropdown inline list size="large">
-          <i data-icon="angle_down"></i>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </tef-dropdown>
-        <tef-dropdown inline anchor size="large">
-          <i data-icon="angle_down"></i>
+        <tef-dropdown anchor up>
           <option><a href="">Option 1</a></option>
           <option><a href="">Option 2</a></option>
           <option><a href="">Option 3</a></option>
@@ -181,18 +109,65 @@
       </div>
       <code>
         <style>
-      <tef-dropdown inline size="small">
-        <i data-icon="angle_down"></i>
+      <tef-dropdown [list OR anchor] up>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </tef-dropdown>
+        </style>
+      </code>
+      
+      <h2>Sizes</h2>
+      <div class="tef-row">
+        <label>Small dropdown</label>
+        <tef-dropdown size="small" list>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </tef-dropdown>
+        <tef-dropdown size="small" anchor>
+          <option><a href="">Option 1</a></option>
+          <option><a href="">Option 2</a></option>
+          <option><a href="">Option 3</a></option>
+        </tef-dropdown>
+      </div>
+      <div class="tef-row">
+        <label>Default dropdown</label>
+        <tef-dropdown list>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </tef-dropdown>
+        <tef-dropdown anchor>
+          <option><a href="">Option 1</a></option>
+          <option><a href="">Option 2</a></option>
+          <option><a href="">Option 3</a></option>
+        </tef-dropdown>
+      </div>
+      <div class="tef-row">
+        <label>Large dropdown</label>
+        <tef-dropdown size="large" list>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </tef-dropdown>
+        <tef-dropdown size="large" anchor>
+          <option><a href="">Option 1</a></option>
+          <option><a href="">Option 2</a></option>
+          <option><a href="">Option 3</a></option>
+        </tef-dropdown>
+      </div>
+      <code>
+        <style>
+      <tef-dropdown [list OR anchor] size="small">
         <option>...</option>
       </tef-dropdown>
           
-      <tef-dropdown inline>
-        <i data-icon="angle_down"></i>
+      <tef-dropdown [list OR anchor]>
         <option>.../option>
       </tef-dropdown>
           
-      <tef-dropdown inline size="large">
-        <i data-icon="angle_down"></i>
+      <tef-dropdown [list OR anchor] size="large">
         <option>...</option>
       </tef-dropdown>
         </style>
@@ -201,16 +176,7 @@
       <h2>Block</h2>
       <p>Fits the available space.</p>
       <div class="tef-row">
-        <tef-dropdown block>
-          <i data-icon="angle_down"></i>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </tef-dropdown>
-      </div>
-      <div class="tef-row">
         <tef-dropdown block list>
-          <i data-icon="angle_down"></i>
           <option>Option 1</option>
           <option>Option 2</option>
           <option>Option 3</option>
@@ -218,7 +184,6 @@
       </div>
       <div class="tef-row">
         <tef-dropdown block anchor>
-          <i data-icon="angle_down"></i>
           <option><a href="">Option 1</a></option>
           <option><a href="">Option 2</a></option>
           <option><a href="">Option 3</a></option>
@@ -226,18 +191,11 @@
       </div>
       <code>
         <style>
-      <tef-dropdown block>
-        <i data-icon="angle_down"></i>
-        <option>...</option>
-      </tef-dropdown>
-          
       <tef-dropdown block list>
-        <i data-icon="angle_down"></i>
         <option>...</option>
       </tef-dropdown>
           
       <tef-dropdown block anchor>
-        <i data-icon="angle_down"></i>
         <option><a href="">...</a></option>
       </tef-dropdown>
         </style>

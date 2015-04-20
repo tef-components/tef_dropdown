@@ -2,20 +2,12 @@
 <link rel="import" href="bower_components/core-style/core-style.html">
 <link rel="import" href="tef_dropdown_styles.html">
 
-<polymer-element name="tef-dropdown" attributes ="size inline block list anchor">
+<polymer-element name="tef-dropdown" attributes ="size block list anchor up">
     <template>
         <core-style ref="tef-dropdown"></core-style>
-        <div class="{{resolveClass()}}">
-            <content select="i"></content>
-            <template if="{{!list && !anchor}}">
-                <select>
-                    <template repeat="{{options}}">
-                        <option>{{textContent}}</option>
-                    </template>
-                </select>
-            </template>
+        <div class="{{resolveClass(active)}}" icon="angle_{{up?'up':'down'}}" on-click="{{onClick}}">
             <template if="{{list}}">
-                <span>{{options[0].textContent}}</span>
+                <span>{{option.textContent}}</span>
                 <ul>
                     <template repeat="{{options}}">
                         <li>{{textContent}}</li>
@@ -23,7 +15,7 @@
                 </ul>
             </template>
             <template if="{{anchor}}">
-                <span>{{options[0].textContent}}</span>
+                <span>{{option.textContent}}</span>
                 <ul>
                     <template repeat="{{options}}">
                         <li><a href={{firstChild.href}}>{{textContent}}</a></li>
@@ -34,6 +26,8 @@
     </template>
     <script>
         Polymer({
+            active: false,
+            
             publish: {
                 anchor: {
                     value: false,
@@ -43,11 +37,11 @@
                     value: false,
                     reflect: true
                 },
-                inline: {
+                list: {
                     value: false,
                     reflect: true
                 },
-                list: {
+                up: {
                     value: false,
                     reflect: true
                 }
@@ -55,16 +49,36 @@
           
             created: function() {
                 this.options = [];
+                this.option = {};
             },
             
+            onClick: function(event) {
+                if (this.anchor || this.list) {
+                    if (this.active) {
+                        for(var i = 0; i < this.options.length; i++) {
+                            if (event.target.textContent == this.options[i].textContent) {
+                                this.option = this.options[i]; break;
+                            }
+                        }
+                    }
+                    this.active = !this.active;
+                } 
+            },
+          
             ready: function(){
                 var opts = this.querySelectorAll('option');
                 for(var i = 0; i < opts.length; i++){
                     this.options.push(opts[i]);
                 }
+                var f = function(event) {
+                    if (event.target != this)
+                        this.active = false;
+                }.bind(this);
+                document.addEventListener('click', f);
+                this.option = this.options[0];
             },
             
-            resolveClass: function() {
+            resolveClass: function(e) {
                 var localClass = 'tef-dropdown';
                 if (this.size) localClass += ' ' + this.size;
                 if (this.inline && !this.block) {
@@ -72,6 +86,12 @@
                 }
                 if (!this.inline && this.block) {
                     localClass += ' block';
+                }
+                if (this.up) {
+                    localClass += ' up';
+                }
+                if (this.active) {
+                    localClass += ' active';
                 }
                 return localClass;
             }
