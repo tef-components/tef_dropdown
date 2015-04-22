@@ -80,13 +80,10 @@
             
             resolveClass: function(e) {
                 var localClass = 'tef-dropdown';
-                if (this.size) localClass += ' ' + this.size;
-                if (this.inline && !this.block) {
-                    localClass += ' inline';
-                }
-                if (!this.inline && this.block) {
+                if (this.block) {
                     localClass += ' block';
                 }
+                if (this.size) localClass += ' ' + this.size;
                 if (this.up) {
                     localClass += ' up';
                 }
