@@ -7,7 +7,7 @@
         <core-style ref="tef-dropdown"></core-style>
         <div class="{{resolveClass(active)}}" icon="angle_{{up?'up':'down'}}" on-click="{{onClick}}">
             <template if="{{list}}">
-                <span>{{option.textContent}}</span>
+                <span>{{value}}</span>
                 <ul>
                     <template repeat="{{options}}">
                         <li>{{textContent}}</li>
@@ -15,7 +15,7 @@
                 </ul>
             </template>
             <template if="{{anchor}}">
-                <span>{{option.textContent}}</span>
+                <span>{{value}}</span>
                 <ul>
                     <template repeat="{{options}}">
                         <li><a href={{firstChild.href}}>{{textContent}}</a></li>
@@ -49,7 +49,7 @@
           
             created: function() {
                 this.options = [];
-                this.option = {};
+                this.value = {};
             },
             
             onClick: function(event) {
@@ -57,7 +57,8 @@
                     if (this.active) {
                         for(var i = 0; i < this.options.length; i++) {
                             if (event.target.textContent == this.options[i].textContent) {
-                                this.option = this.options[i]; break;
+                                this.value = this.options[i].textContent; 
+                                this.fire("change"); break;
                             }
                         }
                     }
@@ -75,7 +76,7 @@
                         this.active = false;
                 }.bind(this);
                 document.addEventListener('click', f);
-                this.option = this.options[0];
+                this.value = this.options[0].textContent;
             },
             
             resolveClass: function(e) {

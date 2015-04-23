@@ -92,9 +92,9 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('release', [
-    'less',
-    'webfont:embedded',
-    'includes',
+    //'less',
+    //'webfont:embedded',
+    //'includes',
     'exec:add',
     'prompt',
     'exec:message',

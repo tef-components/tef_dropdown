@@ -41,6 +41,13 @@
         overflow-y: auto;
         border-radius: 4px;
       }
+      .output {
+        color: grey;
+        border: 1px solid rgb(205, 205, 205);
+        border-left: none;
+        border-right: none;
+        padding: 10px;
+      }
     </style>
   </head>
 
@@ -200,12 +207,29 @@
       </tef-dropdown>
         </style>
       </code>
-    </div>
       
+      <h2>Events</h2>
+      <p class="output" id="testMsg">the selected option now is Option 1</p>
+      <tef-dropdown id="testEvent" list>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </tef-dropdown>
+      <code>
+        <style>
+      var dropdown = document.getElementById('testEvent');
+      dropdown.addEventListener("change", function(){
+        var msg = document.getElementById('testMsg');
+        msg.innerHTML = "the selected option now is " + this.value;
+      });
+        </style>
+      </code>
+    </div>
+    
     <script>
       var theme = document.getElementById('themeSelector');
       theme.addEventListener('change', function() {
-        linkComps = document.getElementById('themeComps');
+        var linkComps = document.getElementById('themeComps');
         linkComps.href = '../theme_'
           + theme.value + '/css/components.'
           + theme.value + '.css';
@@ -216,6 +240,12 @@
           + theme.value + '.js';
         document.head.removeChild(document.getElementById("themeVars"));
         document.head.appendChild(linkVars);
+      });
+      
+      var dropdown = document.getElementById('testEvent');
+      dropdown.addEventListener("change", function(){
+        var msg = document.getElementById('testMsg');
+        msg.innerHTML = "the selected option now is " + this.value;
       });
     </script>
   </body>
