@@ -218,9 +218,10 @@
       <code>
         <style>
       var dropdown = document.getElementById('testEvent');
-      dropdown.addEventListener("change", function(){
+          
+      dropdown.addEventListener("change", function() {
         var msg = document.getElementById('testMsg');
-        msg.innerHTML = "the selected option now is " + this.value;
+        msg.innerHTML = "the selected option now is " + dropdown.value;
       });
         </style>
       </code>
@@ -243,9 +244,9 @@
       });
       
       var dropdown = document.getElementById('testEvent');
-      dropdown.addEventListener("change", function(){
+      dropdown.addEventListener("change", function() {
         var msg = document.getElementById('testMsg');
-        msg.innerHTML = "the selected option now is " + this.value;
+        msg.innerHTML = "the selected option now is " + dropdown.value;
       });
     </script>
   </body>
