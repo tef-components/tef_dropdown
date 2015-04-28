@@ -14,7 +14,7 @@
         && 'import' in document.createElement('link')
         && 'content' in document.createElement('template')) {
       } else {
-        document.write('<script src="bower_components/webcomponentsjs/webcomponents.min.js"><\/script>');
+        document.write('<script src="../webcomponentsjs/webcomponents.min.js"><\/script>');
       }
     </script>
 
@@ -242,7 +242,6 @@
         document.head.removeChild(document.getElementById("themeVars"));
         document.head.appendChild(linkVars);
       });
-      
       var dropdown = document.getElementById('testEvent');
       dropdown.addEventListener("change", function() {
         var msg = document.getElementById('testMsg');
