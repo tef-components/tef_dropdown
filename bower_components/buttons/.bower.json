@@ -1,6 +1,6 @@
 {
   "name": "buttons",
-  "version": "0.2.14",
+  "version": "0.2.20",
   "homepage": "https://github.com/tef-components/buttons",
   "authors": [
     "the TEF components team"
@@ -21,11 +21,11 @@
     "utils": "tef-components/utils",
     "icons": "tef-components/icons"
   },
-  "_release": "0.2.14",
+  "_release": "0.2.20",
   "_resolution": {
     "type": "version",
-    "tag": "v0.2.14",
-    "commit": "ee6d7d17c202e6be21752da6e467daf865f109aa"
+    "tag": "v0.2.20",
+    "commit": "5ffc58ae36731832967c87028739484a70e4153b"
   },
   "_source": "git://github.com/tef-components/buttons.git",
   "_target": "*",

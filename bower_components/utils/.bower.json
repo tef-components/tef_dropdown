@@ -1,6 +1,6 @@
 {
   "name": "utils",
-  "version": "0.2.15",
+  "version": "0.2.19",
   "homepage": "https://github.com/tef-components/utils",
   "authors": [
     "the TEF components team"
@@ -20,11 +20,11 @@
   "dependencies": {
     "buttons": "tef-components/buttons"
   },
-  "_release": "0.2.15",
+  "_release": "0.2.19",
   "_resolution": {
     "type": "version",
-    "tag": "v0.2.15",
-    "commit": "719663d69e997a83e15b3e8e428cad3117df261f"
+    "tag": "v0.2.19",
+    "commit": "f286fa0cae69750a00f224b07697d8838c8e2c77"
   },
   "_source": "git://github.com/tef-components/utils.git",
   "_target": "*",

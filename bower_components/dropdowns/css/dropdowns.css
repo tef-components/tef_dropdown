@@ -32,7 +32,7 @@
   font-size: 15px;
   line-height: normal;
   font-weight: normal;
-  border-radius: 4px;
+  border-radius: @radius;
   padding: 7px 40px 7px 9px;
   border: 1px solid #cfcece;
   cursor: pointer;
